@@ -10,7 +10,7 @@
   max-width: $sidebar-width;
   height: 100%;
   z-index: 50;
-  visibility: hidden;
+  visibility: visible;
   -webkit-transition: visibility 0s 0.3s;
   transition: visibility 0s 0.3s;
 
