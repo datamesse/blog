@@ -114,10 +114,11 @@
     padding-top: 0.5rem;
 
     ul {
-      display: inline;
+      list-style: none;
     }
 
     li:not(:last-child) {
+      display: inline;
       margin-bottom: 0.5rem;
     }
 
