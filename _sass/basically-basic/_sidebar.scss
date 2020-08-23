@@ -113,13 +113,16 @@
     margin-top: 0.5rem;
     padding-top: 0.5rem;
 
-    li:not(:last-child) {
-      margin-bottom: 0.5rem;
+    ul {
       display: inline;
     }
 
+    li:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
     a {
-      display: inline;
+      /* display: inline; */
       color: $base-color;
       text-decoration: none;
     }
