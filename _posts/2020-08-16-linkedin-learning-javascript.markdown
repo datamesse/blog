@@ -9,6 +9,8 @@ tags: [JavaScript, Lockdown, LinkedIn Learning] # add tag
 
 Based on an exercise from [LinkedIn Learning: JavaScript Essential Training](https://www.linkedin.com/learning/javascript-essential-training-3) by Morten Rand-Hendriksen [@mor10](https://twitter.com/mor10).
 
+### **Learning JavaScript**
+
 I expanded on the original by adding:
   * Random quotes on page reload or by clicking the "Start over" button - 23-08-2020
   * Saving consecutive words per minute (WPM) scores to an array, which clears if page is reloaded - 23-08-2020

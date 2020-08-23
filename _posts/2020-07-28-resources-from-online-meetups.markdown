@@ -31,14 +31,14 @@ COVID-19 Contact Tracking using Neo4j Bloom by Joshua Yu
   * [https://github.com/Joshua-Yu/covid-19-contact-tracking-bloom](https://github.com/Joshua-Yu/covid-19-contact-tracking-bloom)
 
 
-## **Database Development**
+### **Database Development**
 
 SQL Query Stress Simulator by Erik Jensen [@ErikEJ](https://twitter.com/ErikEJ)
 
   * [https://github.com/ErikEJ/SqlQueryStress](https://github.com/ErikEJ/SqlQueryStress)
 
 
-## **Internet of Things**
+### **Internet of Things**
 
 IoT Button by Sweekriti Satpathy [@SweekritiS](https://twitter.com/SweekritiS)
 
@@ -52,7 +52,7 @@ Button lights Raspberry Pi LED and sends a Tweet via Azure IoT Hub and Azure Log
   * [https://github.com/gloveboxes/Create-RaspberryPi-dotNET-Core-C-Sharp-IoT-Applications](https://github.com/gloveboxes/Create-RaspberryPi-dotNET-Core-C-Sharp-IoT-Applications)
 
 
-## **Data Science**
+### **Data Science**
 
 Python Data Cleansing with Azure Notebooks by Madeleine Shang
 
