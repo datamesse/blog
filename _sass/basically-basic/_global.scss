@@ -32,6 +32,9 @@
     min-height: 40px ; // PREVIOUSLY $site-image-height
     color: $text-color;
     text-decoration: none;
+  }
+
+  a span {
     font-size: 2rem;
   }
 }
