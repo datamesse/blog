@@ -2,7 +2,7 @@
 author: Ⓓⓐⓣⓐ Ⓜⓔⓢⓢⓔ
 layout: post
 title: Resources from online meetups
-date: 2020-07-28 19:00:00 +1000
+date: 2020-08-23 19:00:00 +1000
 description: Attending a large number of online meetups and conferences during COVID-19 lockdown, this is a list of the interesting and useful projects and tutorials. # Add post description (optional)
 img: how-to-start.jpg # Add image post (optional)
 tags: [Projects, Lockdown] # add tag
