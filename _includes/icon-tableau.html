@@ -1,0 +1,4 @@
+<a href="https://public.tableau.com/profile/{{ include.username }}" target="_target">
+  <span class="icon icon--tableau">{% include icon-tableau.svg %}</span>
+  <span class="label">{{ include.label | default: include.username }}</span>
+</a>
