@@ -129,6 +129,9 @@
     color: $base-color;
     text-decoration: none;
   }
+  a:hover {
+    color: $accent-color;
+  }
 }
 
 .sidebar-toggle-wrapper {
