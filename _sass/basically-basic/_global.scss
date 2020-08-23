@@ -13,7 +13,6 @@
   font-family: $base-font-family;
   font-weight: bold;
   line-height: 1;
-  font-size: 3.5rem;
 
   @include breakpoint($medium) {
     padding-left: 2rem;
@@ -33,6 +32,7 @@
     min-height: 40px ; // PREVIOUSLY $site-image-height
     color: $text-color;
     text-decoration: none;
+    font-size: 2rem;
   }
 }
 
