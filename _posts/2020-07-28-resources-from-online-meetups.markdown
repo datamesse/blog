@@ -1,5 +1,4 @@
 ---
-author: Ⓓⓐⓣⓐ Ⓜⓔⓢⓢⓔ
 layout: post
 title: Resources from online meetups
 date: 2020-07-28 19:00:00 +1000
@@ -15,7 +14,6 @@ A list of resources from online meetups & conferences I attended during COVID-19
 MUGicalNode! by Kris Howard [@web_goddess](https://twitter.com/web_goddess)
 
 > [https://github.com/web-goddess/MUGicalNode](https://github.com/web-goddess/MUGicalNode)
-
 
 Chrome Extension using JavaScript by Trouni Tiet
 
