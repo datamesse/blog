@@ -12,7 +12,6 @@
           <a href="{{ '/' | relative_url }}">
             {% if site.logo %}<img src="{{ site_logo }}" alt="" class="site-logo">{% endif %}
             <span>{{ site.title | escape }}</span>
-            <span>{% include contact-list.html %}</span>
           </a>
         </h1>
       {% else %}
@@ -25,4 +24,5 @@
       {% endif %}
     </div>
   </div>
+  <span>{% include contact-list.html %}</span>
 </header>
