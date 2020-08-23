@@ -113,12 +113,8 @@
     margin-top: 0.5rem;
     padding-top: 0.5rem;
 
-    ul {
-      list-style: none;
-    }
-
     li:not(:last-child) {
-      display: inline;
+      display: inline-block;
       margin-bottom: 0.5rem;
     }
 
