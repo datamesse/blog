@@ -7,16 +7,14 @@
 <header id="masthead">
   <div class="inner">
     <div class="title-area">
-      <div id="background-top-half"></div>
+      <div id="background-top-banner"></div>
       {% if page.url == '/' %}
-      <div id="background-bottom-half">
         <h1 class="site-title">
           <a href="{{ '/' | relative_url }}">
             {% if site.logo %}<img src="{{ site_logo }}" alt="" class="site-logo">{% endif %}
           </a>
         </h1>
         <h2 class="site-title">{% include contact-list.html %}</h2>
-      </div>
       {% else %}
         <p class="site-title">
           <a href="{{ '/' | relative_url }}">
