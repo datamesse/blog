@@ -52,8 +52,23 @@ Button lights Raspberry Pi LED and sends a Tweet via Azure IoT Hub and Azure Log
   * [https://github.com/gloveboxes/Create-RaspberryPi-dotNET-Core-C-Sharp-IoT-Applications](https://github.com/gloveboxes/Create-RaspberryPi-dotNET-Core-C-Sharp-IoT-Applications)
 
 
+### **Machine Learning**
+
+Python/PyTorch notebook for Azure Machine Learning by Henk Boelman [@hboelman](https://twitter.com/hboelman)
+  * [https://github.com/hnky/amls-pytorch](https://github.com/hnky/amls-pytorch)
+
+Simpsons LegoFigure Dataset for Azure Machine Learning by Henk Boelman [@hboelman](https://twitter.com/hboelman)
+  * [https://github.com/hnky/dataset-lego-figures](https://github.com/hnky/dataset-lego-figures)
+
 ### **Data Science**
 
 Python Data Cleansing with Azure Notebooks by Madeleine Shang
 
   * [https://github.com/Prtfw/MSFT_Reactor_ML_AI](https://github.com/Prtfw/MSFT_Reactor_ML_AI)
+
+
+### **Data Sources**
+
+COVID-19 Dataset by Our World in Data [@OurWorldInData](https://twitter.com/OurWorldInData)
+
+  * [https://github.com/owid/covid-19-data/tree/master/public/data](https://github.com/owid/covid-19-data/tree/master/public/data)
