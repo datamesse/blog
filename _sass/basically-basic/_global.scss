@@ -14,6 +14,14 @@
   top: 0px;
   left: 0px;
 }
+#background-bottom-banner{
+  background-color: burlywood;
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  top: 115px;
+  left: 0px;
+}
 
 .site-title {
   @include fluid-type($min-vw, $max-vw, 20px, 24px);
