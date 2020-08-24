@@ -6,12 +6,20 @@
   background-color: #3b88c3;
   position: relative;
 }
-#background-banner{
+#background-top-half{
   background-color: yellowgreen;
   height: 90px;
   width: 100%;
   position: absolute;
   top: 0px;
+  left: 0px;
+}
+#background-bottom-half{
+  background-color: lightblue;
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  top: 105px;
   left: 0px;
 }
 
@@ -26,7 +34,6 @@
   font-family: $base-font-family;
   font-weight: bold;
   line-height: 1;
-  position: absolute;
 
   @include breakpoint($medium) {
     padding-left: 2rem;
