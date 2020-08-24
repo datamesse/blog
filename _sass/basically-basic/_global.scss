@@ -28,6 +28,7 @@
   font-family: $base-font-family;
   font-weight: bold;
   line-height: 1;
+  position: absolute;
 
   @include breakpoint($medium) {
     padding-left: 2rem;
@@ -55,7 +56,6 @@
   height: $site-image-height;
   margin-right: 0.5rem;
   border-radius: 50%;
-  position: absolute;
 }
 
 .more-link {
