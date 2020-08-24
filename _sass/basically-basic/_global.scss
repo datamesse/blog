@@ -2,6 +2,10 @@
    Site-wide
    ========================================================================== */
 
+#masthead {
+  background-color: #3b88c3;
+}
+
 .site-title {
   @include fluid-type($min-vw, $max-vw, 20px, 24px);
   margin: 0;
@@ -13,7 +17,6 @@
   font-family: $base-font-family;
   font-weight: bold;
   line-height: 1;
-  background-color: #3b88c3; /* ADDED */
 
   @include breakpoint($medium) {
     padding-left: 2rem;
