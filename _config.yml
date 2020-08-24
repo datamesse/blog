@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 encoding: UTF-8
 lang: en-US
-title: Ⓓⓐⓣⓐ Ⓜⓔⓢⓢⓔ
+title:
 email:
 description:
 baseurl: # the optional subpath of your site, e.g. "/blog"
