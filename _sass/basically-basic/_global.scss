@@ -30,6 +30,7 @@
   font-weight: bold;
   line-height: 1;
   position: absolute;
+  top: 140;
 
   @include breakpoint($medium) {
     padding-left: 2rem;
