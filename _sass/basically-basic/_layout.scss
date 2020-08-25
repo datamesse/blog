@@ -64,6 +64,12 @@ main {
    Layout specific adjustments
    ========================================================================== */
 
+a.nounderline:link {
+  text-decoration: none;
+}
+
+
+
 .layout--post,
 .layout--page {
   .entry-content {
