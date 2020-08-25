@@ -25,12 +25,25 @@ layout: default
 <main id="main" class="page-content" aria-label="Content">
   <div class="inner">
     <article class="entry-wrap">
+
+      <div class="intro-text">
+        <h1 id="page-title" class="intro-title">{{ page.alt_title | default: page.title | default: site.title | markdownify | strip_html }}</h1>
+      </div>
+
+      <p class="entry-meta">
+        <span class="byline-item">
+          <span class="icon">{% include icon-calendar.svg %}</span>
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        </span>
+        <span class="byline-item">
+          <span class="icon">{% include icon-stopwatch.svg %}</span>
+          {% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}
+        </span>
+      </p>
+
       <div class="entry-content">
         {{ content }}
       </div>
-      {% if site.disqus.shortname %}
-      {% include disqus_comments.html %}
-      {% endif %}
     </article><!-- .intro -->
     <section class="test-area">
         <div id="origin-text">

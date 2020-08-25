@@ -10,6 +10,10 @@ layout: default
   <div class="inner">
     <article class="entry-wrap">
 
+      <div class="intro-text">
+        <h1 id="page-title" class="intro-title">{{ page.alt_title | default: page.title | default: site.title | markdownify | strip_html }}</h1>
+      </div>
+
       <p class="entry-meta">
         <span class="byline-item">
           <span class="icon">{% include icon-calendar.svg %}</span>
