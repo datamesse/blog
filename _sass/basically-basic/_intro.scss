@@ -31,10 +31,10 @@
 }
 
 .intro-text {
-
+  margin-bottom: 10px;
   /* remove space after last child element */
   > *:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0rem;
   }
 }
 
