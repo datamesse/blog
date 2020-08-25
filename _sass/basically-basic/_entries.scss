@@ -76,7 +76,9 @@
 .entries-list {
   .entry-title {
     word-wrap: break-word; /* break long words that could overflow */
-
+    a {
+      text-decoration: none;
+    }
     a:hover {
       color: $accent-color;
     }
