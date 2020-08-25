@@ -76,15 +76,15 @@
 .entries-list {
   .entry-title {
     word-wrap: break-word; /* break long words that could overflow */
-    a {
-      text-decoration: none;
-    }
     a:hover {
       color: $accent-color;
     }
   }
 
   .entry-excerpt {
+    a {
+      text-decoration: none;
+    }
     @include breakpoint($medium) {
       width: span(11 of 16);
     }
@@ -175,6 +175,9 @@
     }
 
     .entry-excerpt {
+      a {
+        text-decoration: none;
+      }
       /* normalize font sizes */
       > * {
         font-size: 1em;
