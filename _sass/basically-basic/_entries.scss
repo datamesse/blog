@@ -102,7 +102,7 @@
     @include breakpoint($medium) {
       width: span(11 of 16);
     }
-    a.nounderline:link {
+    a {
       text-decoration: none;
     }
 
@@ -162,7 +162,7 @@
       -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
       order: 3;
-      a.nounderline:link {
+      a {
         text-decoration: none;
       }
 
@@ -209,7 +209,7 @@
     font-size: 1.125em;
     line-height: 1.625;
   }
-  a.nounderline:link {
+  a {
     text-decoration: none;
   }
 

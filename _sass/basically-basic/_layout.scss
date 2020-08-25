@@ -70,7 +70,7 @@ main {
     @include breakpoint($large) {
       width: span(14 of 16);
     }
-    a.nounderline:link {
+    a {
       text-decoration: none;
     }
   }
@@ -94,7 +94,7 @@ main {
       -ms-flex: 1;
       flex: 1;
     }
-    a.nounderline:link {
+    a {
       text-decoration: none;
     }
   }
@@ -138,7 +138,7 @@ main {
         float: right;
         width: span(11 of 16);
       }
-      a.nounderline:link {
+      a {
         text-decoration: none;
       }
     }
