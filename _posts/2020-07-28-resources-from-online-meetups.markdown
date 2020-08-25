@@ -3,7 +3,7 @@ layout: post
 title: Resources from online meetups
 date: 2020-07-28 19:00:00 +1000
 description: Attending a large number of online meetups and conferences during COVID-19 lockdown, this is a list of the interesting and useful projects and tutorials. # Add post description (optional)
-img: /assets/images/amine-ounnas-180287.jpg # Add image post (optional)
+img: # /assets/images/?????.jpg no longer works
 tags: [Projects, Lockdown] # add tag
 ---
 
