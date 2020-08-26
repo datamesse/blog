@@ -69,6 +69,14 @@
   top: $site-image-height * 1.40;
   left: $site-image-width;
 
+  @include breakpoint($medium) {
+    padding-left: 2rem;
+  }
+
+  @include breakpoint($large) {
+    padding-left: 5vw;
+  }
+
   a {
     display: -ms-flexbox;
     display: -webkit-box;
