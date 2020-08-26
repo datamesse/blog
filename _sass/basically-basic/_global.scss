@@ -18,6 +18,7 @@
   margin-top: 260px;
 }
 
+
 .site-title {
   @include fluid-type($min-vw, $max-vw, 20px, 24px);
   margin: 0;
@@ -31,11 +32,6 @@
   line-height: 1;
   position: absolute;
   top: 120px;
-
-  h2 {
-    left: $site-image-width;
-    padding-left: 0px;
-  }
 
   @include breakpoint($medium) {
     padding-left: 2rem;
@@ -56,6 +52,16 @@
     color: $text-color;
     text-decoration: none;
   }
+}
+
+.site-title h1 {
+  left: $site-image-width;
+  padding-left: 0px;
+}
+
+.site-title h2 {
+  left: $site-image-width;
+  padding-left: 0px;
 }
 
 .site-logo {
