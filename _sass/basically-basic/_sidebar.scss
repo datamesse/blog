@@ -114,9 +114,9 @@
 
 .contact-list {
   @include fluid-type($min-vw, $max-vw, 18px, 24px);
-  margin-top: 6rem;
+  margin-top: 0rem;
   margin-bottom: 0rem;
-  margin-left: $site-image-width;
+  left: $site-image-width * 2;
 
   li {
     padding-left: 10px;
