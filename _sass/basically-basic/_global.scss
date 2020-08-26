@@ -32,6 +32,11 @@
   position: absolute;
   top: 120px;
 
+  h2 {
+    left: $site-image-width;
+    padding-left: 0px;
+  }
+
   @include breakpoint($medium) {
     padding-left: 2rem;
   }
