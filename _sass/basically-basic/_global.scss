@@ -54,6 +54,41 @@
   }
 }
 
+.site-title2 {
+  @include fluid-type($min-vw, $max-vw, 20px, 24px);
+  margin: 0;
+  padding: 0rem 0rem;
+  /* padding-right: calc(
+    10vw + (2 * #{$navicon-width})
+  ); make room for sidebar toggle */
+  padding-bottom: 0rem;
+  font-family: $base-font-family;
+  font-weight: bold;
+  line-height: 1;
+  position: absolute;
+  top: 120px;
+
+  @include breakpoint($medium) {
+    padding-left: 2rem;
+  }
+
+  @include breakpoint($large) {
+    padding-left: 5vw;
+  }
+
+  a {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 40px ; // PREVIOUSLY $site-image-height
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+
 .site-logo {
   width: $site-image-width;
   height: $site-image-height;

@@ -9,18 +9,18 @@
     <div class="title-area">
       <div id="background-top-banner"></div>
       {% if page.url == '/' %}
-        <h1>
+        <h1 class="site-title">
           <a href="{{ '/' | relative_url }}">
             {% if site.logo %}<img src="{{ site_logo }}" alt="" class="site-logo">{% endif %}
           </a>
         </h1>
-        <h2 class="site-title">{% include contact-list.html %}</h2>
+        <h2 class="site-title2">{% include contact-list.html %}</h2>
       {% else %}
-        <p>
+        <p class="site-title">
           <a href="{{ '/' | relative_url }}">
             {% if site.logo %}<img src="{{ site_logo }}" alt="" class="site-logo">{% endif %}
           </a>
-          <h2 class="site-title">{% include contact-list.html %}</h2>
+          <h2 class="site-title2">{% include contact-list.html %}</h2>
         </p>
       {% endif %}
     </div>
