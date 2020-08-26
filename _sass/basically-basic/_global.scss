@@ -66,7 +66,7 @@
   font-weight: bold;
   line-height: 1;
   position: absolute;
-  top: $site-image-height * 1.75;
+  top: $site-image-height * 1.25;
   left: $site-image-width;
 
   @include breakpoint($medium) {
