@@ -6,28 +6,7 @@
   position: relative;
 }
 #background-top-banner{
-  background-image: url("https://github.com/datamesse/blog/blob/master/assets/images/background_1500x500.jpg?raw=true");
-  position: relative;
-  margin-top: -3rem; /* compensate for intro top margin */
-  margin-bottom: 0.5rem;
-
-  &::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    @if $intro-image-color-overlay == true {
-      background-color: rgba($accent-color, 0.25);
-    };
-    content: '';
-  }
-
-  img {
-    width: 100%;
-  }
-
-  /*  background-color: #3b88c3; 
+  background-color: #3b88c3; 
   background-image: url("https://github.com/datamesse/blog/blob/master/assets/images/background_1500x500.jpg?raw=true");
   height: 200px;
   width: 100%;
@@ -36,8 +15,9 @@
   left: 0px;
   background-repeat: no-repeat;
   img {
-    width: 100%;
-  } */
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 .page-content{
   margin-top: 230px;
