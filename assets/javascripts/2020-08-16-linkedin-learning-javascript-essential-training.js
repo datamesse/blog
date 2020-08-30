@@ -69,7 +69,7 @@ function matchScore(){
 function drawLineGraph() {
     var linegraphheight = 220;
     var linegraphwidth = 500;
-    var margin = { left: 50, right: 50, top: 40, bottom: 0 };
+    var margin = { left: 50, right: 50, top: 20, bottom: 0 };
     var y = d3.scaleLinear()
         .domain([0,200])
         .range([linegraphheight,0]);
