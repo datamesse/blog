@@ -31,7 +31,7 @@ const typingPhrases = [
     "A clever person solves a problem. A wise person avoids it.",
     "You never fail until you stop trying.",
     "The world is a dangerous place to live, not because of the people who are evil, but because of the people who don't do anything about it.",
-    "The best way to cheer yourself is to cheer somebody else up."
+    "The best way to cheer yourself is to cheer somebody else up.",
     "We have always held to the hope, the belief, the conviction that there is a better life, a better world, beyond the horizon.",
     "The measure of intelligence is the ability to change.",
     "Freedom is the open window through which pours the sunlight of the human spirit and human dignity.",
