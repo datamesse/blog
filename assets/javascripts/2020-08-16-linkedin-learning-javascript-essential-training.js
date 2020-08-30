@@ -12,6 +12,7 @@ var originText = null;
 var wpmScores = new Array();
 var typingAttempt = 1;
 var typingAttempts = new Array();
+var timeScore = null;
 
 // PERSONAL ADD-IN
 const typingPhrases = [
@@ -62,7 +63,7 @@ function countWords(){
 function matchScore(){
     let secondsCount = (timer[0] * 60) + timer[1] + (timer[2] * (.01) );
     let wordCount = countWords();
-    return wordsPerMinute = Math.round(wordCount / secondsCount  * 60);
+    return Math.round(wordCount / secondsCount  * 60);
 }
 // https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/creating-a-linear-axis
 function drawLineGraph() {
@@ -122,7 +123,7 @@ function spellCheck() {
     if (textEntered == originText) {
         clearInterval(interval);
         testWrapper.style.borderColor = "#0fee08"; // turn border green
-        matchScore();
+        timeScore = matchScore();
     } else {
         if (textEntered == originTextMatch) {
             testWrapper.style.borderColor = "#65CCf3"; // turn border blue
