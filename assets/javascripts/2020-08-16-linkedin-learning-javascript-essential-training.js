@@ -62,9 +62,7 @@ function countWords(){
 function matchScore(){
     let secondsCount = (timer[0] * 60) + timer[1] + (timer[2] * (.01) );
     let wordCount = countWords();
-    let wordsPerMinute = Math.round(wordCount / secondsCount  * 60);
-    wpmScores.push(wordsPerMinute);
-    console.log(wpmScores);    
+    return wordsPerMinute = Math.round(wordCount / secondsCount  * 60);
 }
 // https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/creating-a-linear-axis
 function drawLineGraph() {
