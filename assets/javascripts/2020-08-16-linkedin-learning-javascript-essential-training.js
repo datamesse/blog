@@ -155,7 +155,8 @@ function reset() {
     theTimer.innerHTML = "00:00:00";
     testWrapper.style.borderColor = "grey";
 
-    wpmScores.push(wordsPerMinute);
+    wpmScores.push(timeScore);
+    timeScore = null;
     typingAttempts.push(typingAttempt);
     console.log(wpmScores);
     console.log(typingAttempts);
