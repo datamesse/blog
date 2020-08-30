@@ -10,6 +10,8 @@ var timerRunning = false;
 // PERSONAL ADD-IN
 var originText = null;
 var wpmScores = new Array();
+var typingAttempt = 1;
+var typingAttempts = new Array();
 
 // PERSONAL ADD-IN
 const typingPhrases = [
@@ -30,6 +32,14 @@ const typingPhrases = [
     "You never fail until you stop trying.",
     "The world is a dangerous place to live, not because of the people who are evil, but because of the people who don't do anything about it.",
     "The best way to cheer yourself is to cheer somebody else up."
+    "We have always held to the hope, the belief, the conviction that there is a better life, a better world, beyond the horizon.",
+    "The measure of intelligence is the ability to change.",
+    "Freedom is the open window through which pours the sunlight of the human spirit and human dignity.",
+    "Anything is possible when you have the right people there to support you.",
+    "Share your smile with the world. It's a symbol of friendship and peace.",
+    "Many people will walk in and out of your life, but only true friends will leave footprints in your heart.",
+    "A good friend is like a four-leaf clover: hard to find and lucky to have.",
+    "Awards become corroded. Friends gather no dust."
 ];
 
 // PERSONAL ADD-IN
@@ -56,6 +66,35 @@ function matchScore(){
     wpmScores.push(wordsPerMinute);
     console.log(wpmScores);    
 }
+// https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/creating-a-linear-axis
+function drawLineGraph() {
+    var linegraphheight = 220;
+    var linegraphwidth = 500;
+    var margin = { left: 50, right: 50, top: 40, bottom: 0 };
+    var y = d3.scaleLinear()
+        .domain([0,200])
+        .range([linegraphheight,0]);
+    var yAxis = d3.axisLeft(y);
+    var area = d3.area()
+        .x(function(d,i){ return i*20; })
+        .y0(linegraphheight)
+        .y1(function(d){ return y(d); });
+    var svg = d3.select("#line-graph").append("svg")
+        .attr("height","270")
+        .attr("width","100%");
+    var chartGroup = svg.append("g")
+        .attr("transform","translate("+margin.left+","+margin.top+")");
+    chartGroup.append("path")
+        .attr("stroke","#0D1B2E")
+        .attr("stroke-width",2)
+        .attr("fill","#0a4392")
+        .attr("d",area(wpmScores));
+    chartGroup.append("g")
+        .attr("class","axis y")
+        .call(yAxis);
+}
+
+
 
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
@@ -116,7 +155,16 @@ function reset() {
     testArea.value = "";
     theTimer.innerHTML = "00:00:00";
     testWrapper.style.borderColor = "grey";
+
+    wpmScores.push(wordsPerMinute);
+    typingAttempts.push(typingAttempt);
+    console.log(wpmScores);
+    console.log(typingAttempts);
+    typingAttempt += 1; // PERSONAL ADD-IN 
     randomOriginText(); // PERSONAL ADD-IN
+    var s = d3.selectAll('svg');
+    s = s.remove();
+    drawLineGraph();
 }
 
 // Event listeners for keyboard input and the reset
