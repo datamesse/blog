@@ -84,6 +84,7 @@ function drawLineGraph() {
     var chartGroup = svg.append("g")
         .attr("transform","translate("+margin.left+","+margin.top+")");
     chartGroup.append("path")
+        .attr("class","svg-graph")
         .attr("stroke","#0D1B2E")
         .attr("stroke-width",2)
         .attr("fill","#0a4392")
@@ -162,7 +163,7 @@ function reset() {
     console.log(typingAttempts);
     typingAttempt += 1; // PERSONAL ADD-IN 
     randomOriginText(); // PERSONAL ADD-IN
-    var s = d3.selectAll('svg');
+    var s = d3.selectAll(".svg-graph");
     s = s.remove();
     drawLineGraph();
 }
