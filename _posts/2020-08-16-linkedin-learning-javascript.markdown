@@ -13,3 +13,5 @@ I expanded on the original by adding:
   * Random quotes on page reload or by clicking the "Start over" button - 23/08/2020
   * Saving consecutive words per minute (WPM) scores to an array, which clears if page is reloaded - 23/08/2020
   * [D3.js](https://d3js.org/) area graph to chart WPM scores, using code from [D3.js Essential Training for Data Scientists](https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/creating-a-linear-axis) by Emma Saunders [@emma_j_saunders](https://twitter.com/emma_j_saunders) - 30/08/2020
+
+  JavaScript code [here](https://github.com/datamesse/blog/blob/master/assets/javascripts/2020-08-16-linkedin-learning-javascript-essential-training.js).
