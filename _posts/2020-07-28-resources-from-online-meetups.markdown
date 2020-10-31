@@ -7,7 +7,7 @@ img: # /assets/images/?????.jpg no longer works
 tags: [Projects, Lockdown] # add tag
 ---
 
-A list of resources from online meetups & conferences I attended during COVID-19 lockdown.
+A list of resources from online meetups & conferences I attended during COVID-19 lockdown. Last updated: 31/10/2020.
 
 ### **Application Development**
 
@@ -23,6 +23,18 @@ Azure Speech to Text using Python by Jim Bennett [@jimbobbennett](https://twitte
 
   * [https://github.com/jimbobbennett/SpeechToTextSamples](https://github.com/jimbobbennett/SpeechToTextSamples)
 
+Automerge: JavaScript Library for collaborative applications by Martin Kleppmann [@martinkl](https://twitter.com/martinkl)
+
+  * [https://github.com/automerge/automerge](https://github.com/automerge/automerge)
+
+Azure URL Shortener by Frank Boucher [@fboucheros](https://twitter.com/fboucheros)
+
+  * [https://github.com/FBoucher/AzUrlShortener](https://github.com/FBoucher/AzUrlShortener)
+
+Azure Twitter Bot using LogicApps by Phil Harvey [@CodeBeard](https://twitter.com/CodeBeard)
+
+  * [https://github.com/TheRealCodeBeard/ServerlessTwitterBot](https://github.com/TheRealCodeBeard/ServerlessTwitterBot)
+
 
 ### **Data Visualisation**
 
@@ -36,6 +48,20 @@ COVID-19 Contact Tracking using Neo4j Bloom by Joshua Yu
 SQL Query Stress Simulator by Erik Jensen [@ErikEJ](https://twitter.com/ErikEJ)
 
   * [https://github.com/ErikEJ/SqlQueryStress](https://github.com/ErikEJ/SqlQueryStress)
+
+SQL Scripts for Partiioning in ETLs by Magnus Ahlkvist [@Transmokopter](https://twitter.com/Transmokopter)
+
+  * [https://github.com/transmokopter/Presentations/tree/master/eight-hours-of-work-in-20-minutes/sinagpore-sqlpass-data-sessions-episode-12-2020](https://github.com/transmokopter/Presentations/tree/master/eight-hours-of-work-in-20-minutes/sinagpore-sqlpass-data-sessions-episode-12-2020)
+
+SQL Server 2019 applied cryptography by [@JasminAzemovic](https://twitter.com/JasminAzemovic)
+
+  * [https://github.com/jasminazemovic/sql-server-cryptography](https://github.com/jasminazemovic/sql-server-cryptography)
+
+Securing SQL Server free ebook by [@JasminAzemovic](https://twitter.com/JasminAzemovic)
+
+Yjs: Conflict-free Replicated Data Type (CRDT) JavaScript framework by Kevin Jahns [@kevin_jahns](https://twitter.com/kevin_jahns)
+
+  * [https://github.com/yjs/yjs](https://github.com/yjs/yjs)
 
 
 ### **Internet of Things**
@@ -55,10 +81,21 @@ Button lights Raspberry Pi LED and sends a Tweet via Azure IoT Hub and Azure Log
 ### **Machine Learning**
 
 Python/PyTorch notebook for Azure Machine Learning by Henk Boelman [@hboelman](https://twitter.com/hboelman)
+
   * [https://github.com/hnky/amls-pytorch](https://github.com/hnky/amls-pytorch)
 
 Simpsons LegoFigure Dataset for Azure Machine Learning by Henk Boelman [@hboelman](https://twitter.com/hboelman)
+
   * [https://github.com/hnky/dataset-lego-figures](https://github.com/hnky/dataset-lego-figures)
+
+Azure Pipeline & Responsible AI in mediical scenario by Lee Stott [@lee_stott](https://twitter.com/lee_stott)
+
+  * [https://github.com/leestott/ResponsibleAI](https://github.com/leestott/ResponsibleAI)
+
+Azure MLOps by Microsoft
+
+  * [https://github.com/Microsoft/MLOps](https://github.com/Microsoft/MLOps)
+
 
 ### **Data Science**
 
@@ -72,3 +109,7 @@ Python Data Cleansing with Azure Notebooks by Madeleine Shang
 COVID-19 Dataset by Our World in Data [@OurWorldInData](https://twitter.com/OurWorldInData)
 
   * [https://github.com/owid/covid-19-data/tree/master/public/data](https://github.com/owid/covid-19-data/tree/master/public/data)
+
+  Movie Ratings Dataset by GroupLens [@grouplens](https://twitter.com/grouplens)
+
+  * [https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)
