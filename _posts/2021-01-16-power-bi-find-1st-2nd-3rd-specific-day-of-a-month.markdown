@@ -1,15 +1,12 @@
 ---
 layout: post
-title: Power Query Find date for the first, second or third specific day of a month
+title: Power Query Find date for the 1st, 2nd, 3rd, or 4th specific day of a month
 date: 2021-01-16 18:00:00 +1100
 description: Using Power Query in Power BI to find the first, second, third or fourth specific day e.g. Sunday of a month/year, based on another date column. # Add post description (optional)
 img: # /assets/images/?????.jpg no longer works
 tags: [Power BI, Power Query, M, Date.DayOfWeek,] # add tag
 ---
 
-### **Using Power Query to find the 1st, 2nd, 3rd, or 4th weekday of a month year**
-
-**Scenario:**
 
 Finding the date of a specific weekday based on the month/year of another column. This may be required for the conditional logic of other Custom Columns. For example, to create indicators that data rows occur on or fall between relative date ranges e.g. Black Friday sales. The following involves adding a Custom Column in Power Query i.e. M code, not DAX.
 
