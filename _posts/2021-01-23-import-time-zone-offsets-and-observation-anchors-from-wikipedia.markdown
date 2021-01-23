@@ -106,6 +106,37 @@ In my scenario, I want to retain this data separately in an Excel file, so I cre
 ![Power BI Export table results](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/14.png?raw=true)
 
 
+Final Power Query M code:
+```
+{
+let
+    Source = Web.BrowserContents("https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"),
+    #"Extract HTML table from Wikipedia" = Html.Table(Source, {{"Column1", "TABLE.wikitable.sortable.jquery-tablesorter:nth-child(9) > * > TR > :nth-child(1)"}, {"Column2", "TABLE.wikitable.sortable.jquery-tablesorter:nth-child(9) > * > TR > :nth-child(2)"}, {"Column3", "TABLE.wikitable.sortable.jquery-tablesorter:nth-child(9) > * > TR > :nth-child(3)"}, {"Column4", "TABLE.wikitable.sortable.jquery-tablesorter:nth-child(9) > * > TR > :nth-child(4)"}, {"Column5", "TABLE.wikitable.sortable.jquery-tablesorter:nth-child(9) > * > TR > :nth-child(5)"}, {"Column6", "TABLE.wikitable.sortable.jquery-tablesorter:nth-child(9) > * > TR > :nth-child(6)"}, {"Column7", "TABLE.wikitable.sortable.jquery-tablesorter:nth-child(9) > * > TR > :nth-child(7)"}, {"Column8", "TABLE.wikitable.sortable.jquery-tablesorter:nth-child(9) > * > TR > :nth-child(8)"}}, [RowSelector="TABLE.wikitable.sortable.jquery-tablesorter:nth-child(9) > * > TR"]),
+    #"Promote first row as headers" = Table.PromoteHeaders(#"Extract HTML table from Wikipedia", [PromoteAllScalars=true]),
+    #"Add timezone column" = Table.AddColumn(#"Promote first row as headers", "Timezone", each Text.Replace(Text.Replace([TZ database name],"/", ", "),"_"," ")),
+    #"Add Standard UTC offset column" = Table.AddColumn(#"Add timezone column", "Standard UTC offset", each Text.Replace([#"UTC offset ±hh:mm"],"−","-")),
+    #"Add Daylight Saving UTC offset column" = Table.AddColumn(#"Add Standard UTC offset column", "Daylight Saving UTC offset", each Text.Replace([#"UTC DST offset ±hh:mm"],"−","-")),
+    #"Add Daylight offset - Standard offset column" = Table.AddColumn(#"Add Daylight Saving UTC offset column", "Daylight offset - Standard offset", each /* If the offsets are identical, it may imply no Daylight Saving observed */
+if [Standard UTC offset] = [Daylight Saving UTC offset]
+then 0
+/* If minutes are the same and aren't zero, just subtract hours */
+else if (Text.End([Standard UTC offset],2) <> "00" or 
+Text.End([Daylight Saving UTC offset],2) <> "00") and Text.End([Standard UTC offset],2) = Text.End([Daylight Saving UTC offset],2)
+then Number.FromText(Text.Range([Daylight Saving UTC offset],0,3)) - Number.FromText(Text.Range([Standard UTC offset],0,3))
+/* If minutes are different and either of them aren't zero, convert minutes to proper decimals, subtract, then convert minutes back */
+else if (Text.End([Standard UTC offset],2) <> "00" or 
+Text.End([Daylight Saving UTC offset],2) <> "00") and Text.End([Standard UTC offset],2) <> Text.End([Daylight Saving UTC offset],2)
+then (Number.FromText(Text.Range([Daylight Saving UTC offset],1,2)) + (Number.FromText(Text.End([Daylight Saving UTC offset],2)) / 60)) - (Number.FromText(Text.Range([Standard UTC offset],1,2)) + (Number.FromText(Text.End([Standard UTC offset],2)) / 60))
+/* Standard expectation that difference is only in the hour values */
+else Number.FromText(Text.Range([Daylight Saving UTC offset],1,2)) - Number.FromText(Text.Range([Standard UTC offset],1,2))),
+    #"Filter for Canonical and country coded offsets only" = Table.SelectRows(#"Add Daylight offset - Standard offset column", each ([Status] = "Canonical") and ([Country code] <> "")),
+    #"Remove unnecessary columns" = Table.SelectColumns(#"Filter for Canonical and country coded offsets only",{"Country code", "Timezone", "Standard UTC offset", "Daylight Saving UTC offset", "Daylight offset - Standard offset"})
+in
+    #"Remove unnecessary columns"
+}
+```
+
+
 
 **Exercise 2:**
 
@@ -250,3 +281,143 @@ I tried fuzzy matching, but as at time of writing, it cannot connect a high enou
 An alternative solution would be to create a list based on the second dataset’s county column, but this would neglect the _region, city_ joins from the first dataset. Another would be to find a third dataset to extend the other datasets and formulate a common column for the merge. In my scenario, the cost vs benefit would be more time efficient to do the mapping manually, and this dataset is small, and intended for a niche non-scaled need. I provided a copy of the end product [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Time_zone_offsets_and_DST_observations.xlsx?raw=true) to download as an Excel file. As a reminder, this is strictly an exercise file, and its data is not comprehensive nor accurate.
 
 ![Manually cleaned output](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/29.png?raw=true)
+
+
+
+Final Power Query M code:
+```
+{
+let
+    Source = Web.BrowserContents("https://en.wikipedia.org/wiki/Daylight_saving_time_by_country"),
+    #"Extract HTML table from Wikipedia" = Html.Table(Source, {{"Column1", "TABLE.wikitable.sortable > * > TR > :nth-child(1)"}, {"Column2", "TABLE.wikitable.sortable > * > TR > :nth-child(2)"}, {"Column3", "TABLE.wikitable.sortable > * > TR > :nth-child(3)"}, {"Column4", "TABLE.wikitable.sortable > * > TR > :nth-child(4)"}, {"Column5", "TABLE.wikitable.sortable > * > TR > :nth-child(5)"}, {"Column6", "TABLE.wikitable.sortable > * > TR > :nth-child(6)"}}, [RowSelector="TABLE.wikitable.sortable > * > TR"]),
+    #"Promote first row as headers" = Table.PromoteHeaders(#"Extract HTML table from Wikipedia", [PromoteAllScalars=true]),
+    #"Filter for valid daylight saving observations" = Table.SelectRows(#"Promote first row as headers", each ([DST start] <> "–")),
+    #"Add DST start (position anchor) column" = Table.AddColumn(#"Filter for valid daylight saving observations", "DST start (position anchor)", each if Text.Contains([DST start], "First")
+then 1
+else if Text.Contains([DST start], "Second")
+then 2
+else if Text.Contains([DST start], "Third")
+then 3
+else if Text.Contains([DST start], "Fourth")
+then 4
+else if Text.Contains([DST start], "Fifth")
+then 5
+else if Text.Contains([DST start], "Last")
+then 9
+else null),
+    #"Add DST start (day anchor) column" = Table.AddColumn(#"Add DST start (position anchor) column", "DST start (day anchor)", each if Text.Contains([DST start], "Sunday")
+then Day.Sunday
+else 
+if Text.Contains([DST start], "Monday")
+then Day.Monday
+else 
+if Text.Contains([DST start], "Tuesday")
+then Day.Tuesday
+else 
+if Text.Contains([DST start], "Wednesday")
+then Day.Wednesday
+else 
+if Text.Contains([DST start], "Thursday")
+then Day.Thursday
+else 
+if Text.Contains([DST start], "Friday")
+then Day.Friday
+else 
+if Text.Contains([DST start], "Saturday")
+then Day.Saturday
+else null),
+    #"Add DST start (month anchor) column" = Table.AddColumn(#"Add DST start (day anchor) column", "DST start (month anchor)", each if Text.Contains([DST start], "January")
+then 1
+else if Text.Contains([DST start], "February")
+then 2
+else if Text.Contains([DST start], "March")
+then 3
+else if Text.Contains([DST start], "April")
+then 4
+else if Text.Contains([DST start], "May")
+then 5
+else if Text.Contains([DST start], "June")
+then 6
+else if Text.Contains([DST start], "July")
+then 7
+else if Text.Contains([DST start], "August")
+then 8
+else if Text.Contains([DST start], "September")
+then 9
+else if Text.Contains([DST start], "October")
+then 10
+else if Text.Contains([DST start], "November")
+then 11
+else if Text.Contains([DST start], "December")
+then 12
+else null),
+    #"Add DST start (UTC time anchor) column" = Table.AddColumn(#"Add DST start (month anchor) column", "DST start (UTC time anchor)", each if Text.Contains([DST start], " UTC")
+then Text.Range([DST start], Text.PositionOf([DST start]," UTC") - 5, 5)
+else null),
+    #"Add DST end (position anchor) column" = Table.AddColumn(#"Add DST start (UTC time anchor) column", "DST end (position anchor)", each if Text.Contains([DST end], "First")
+then 1
+else if Text.Contains([DST end], "Second")
+then 2
+else if Text.Contains([DST end], "Third")
+then 3
+else if Text.Contains([DST end], "Fourth")
+then 4
+else if Text.Contains([DST end], "Fifth")
+then 5
+else if Text.Contains([DST end], "Last")
+then 9
+else null),
+    #"Add DST end (day anchor) column" = Table.AddColumn(#"Add DST end (position anchor) column", "DST end (day anchor)", each if Text.Contains([DST end], "Sunday")
+then Day.Sunday
+else 
+if Text.Contains([DST end], "Monday")
+then Day.Monday
+else 
+if Text.Contains([DST end], "Tuesday")
+then Day.Tuesday
+else 
+if Text.Contains([DST end], "Wednesday")
+then Day.Wednesday
+else 
+if Text.Contains([DST end], "Thursday")
+then Day.Thursday
+else 
+if Text.Contains([DST end], "Friday")
+then Day.Friday
+else 
+if Text.Contains([DST end], "Saturday")
+then Day.Saturday
+else null),
+    #"Add DST end (month anchor) column" = Table.AddColumn(#"Add DST end (day anchor) column", "DST end (month anchor)", each if Text.Contains([DST end], "January")
+then 1
+else if Text.Contains([DST end], "February")
+then 2
+else if Text.Contains([DST end], "March")
+then 3
+else if Text.Contains([DST end], "April")
+then 4
+else if Text.Contains([DST end], "May")
+then 5
+else if Text.Contains([DST end], "June")
+then 6
+else if Text.Contains([DST end], "July")
+then 7
+else if Text.Contains([DST end], "August")
+then 8
+else if Text.Contains([DST end], "September")
+then 9
+else if Text.Contains([DST end], "October")
+then 10
+else if Text.Contains([DST end], "November")
+then 11
+else if Text.Contains([DST end], "December")
+then 12
+else null),
+    #"Add DST end (UTC time anchor)" = Table.AddColumn(#"Add DST end (month anchor) column", "DST end (UTC time anchor)", each if Text.Contains([DST end], " UTC")
+then Text.Range([DST end], Text.PositionOf([DST end]," UTC") - 5, 5)
+else null),
+    #"Remove unnecessary columns" = Table.SelectColumns(#"Add DST end (UTC time anchor)",{"Continent/Subregion", "Country/Territory", "DST start (position anchor)", "DST start (day anchor)", "DST start (month anchor)", "DST start (UTC time anchor)", "DST end (position anchor)", "DST end (day anchor)", "DST end (month anchor)", "DST end (UTC time anchor)", "Notes[1]"})
+in
+    #"Remove unnecessary columns"
+}
+```
