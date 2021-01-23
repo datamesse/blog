@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Import time zone offsets and observation anchors from Wikipedia
-date: 2021-01-23 16:25:00 +1100
+date: 2021-01-23 16:32:00 +1100
 description: Using Power Query in Power BI to extract timezone and daylight saving observation periods from Wikipedia. # Add post description (optional)
 img: # /assets/images/?????.jpg no longer works
 tags: [Power BI, Power Query, M, Date.DayOfWeek] # add tag
@@ -45,7 +45,9 @@ Then we add new custom columns to substitute existing columns to clean the data.
 
 First we add a new column to substitute the TZ database name column, replacing the single forward slashes “/” with forward slashes surrounded by spaces “ / “, and replace the underscores “_” with spaces “ “, for readability.
 
-`Text.Replace(Text.Replace([TZ database name],"/", ", "),"_"," ")`
+```
+Text.Replace(Text.Replace([TZ database name],"/", ", "),"_"," ")
+```
 
 ![Power Query Replace text to make more readable](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/07.png?raw=true)
 
@@ -53,12 +55,16 @@ Secondly, the data source’s offsets use a different dash character "−" (slig
 
 For the Standard UTC offset:
 
-`Text.Replace([#"UTC offset ±hh:mm"],"−","-")`
+```
+Text.Replace([#"UTC offset ±hh:mm"],"−","-")
+```
 ![Power Query Custom Column: Standard UTC offset ](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/08.png?raw=true)
 
 For the Daylight Saving UTC offset:
 
-`Text.Replace([#"UTC DST offset ±hh:mm"],"−","-")`
+```
+Text.Replace([#"UTC DST offset ±hh:mm"],"−","-")
+```
 ![Power Query Custom Column: Daylight Saving UTC offset](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/09.png?raw=true)
 
 Now to add a column that shows the difference between the standard and daylight savings offsets.
@@ -66,7 +72,6 @@ The nature of the data means you cannot subtract them in a simple way.
 Comments are included in the code to explain what is occurring.
 
 ```
-{
 /* If the offsets are identical, it may imply no Daylight Saving observed */
 if [Standard UTC offset] = [Daylight Saving UTC offset]
 then 0
@@ -80,7 +85,6 @@ Text.End([Daylight Saving UTC offset],2) <> "00") and Text.End([Standard UTC off
 then (Number.FromText(Text.Range([Daylight Saving UTC offset],1,2)) + (Number.FromText(Text.End([Daylight Saving UTC offset],2)) / 60)) - (Number.FromText(Text.Range([Standard UTC offset],1,2)) + (Number.FromText(Text.End([Standard UTC offset],2)) / 60))
 /* Standard expectation that difference is only in the hour values */
 else Number.FromText(Text.Range([Daylight Saving UTC offset],1,2)) - Number.FromText(Text.Range([Standard UTC offset],1,2))
-}
 ```
 
 ![Power Query Custom Column: Offset difference](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/10.png?raw=true)
@@ -139,6 +143,7 @@ We’ll begin with the position-related column.
 
 Every day has at least four occurrences in each month, but the “last” position could either be the fourth or fifth occurrence of that day. I chose to use an arbitrary value of 9 for the output of last, given 5 could possibly be used for the fifth instance of the day. Though with this particular dataset, nether Fourth nor Fifth occur, so they can be omitted here.
 
+```
 if Text.Contains([DST start], "First")
 then 1
 else if Text.Contains([DST start], "Second")
@@ -152,11 +157,13 @@ then 5
 else if Text.Contains([DST start], "Last")
 then 9
 else null
+```
 
 ![Power Query Custom Column: DST start position anchor](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/20.png?raw=true)
 
 Next to create a custom column for the weekdays, using Power Query’s Day functions, which translate as numbers from 0 for Sunday to 6 for Saturday.
 
+```
 if Text.Contains([DST start], "Sunday")
 then Day.Sunday
 else 
@@ -178,11 +185,13 @@ else
 if Text.Contains([DST start], "Saturday")
 then Day.Saturday
 else null
+```
 
 ![Power Query Custom Column: DST start day anchor](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/21.png?raw=true)
 
 We repeat with similar logic for the DST start field’s month anchor. At time of writing, Power Query has a function that converts month numbers to month names, but not the other way around.
 
+```
 if Text.Contains([DST start], "January")
 then 1
 else if Text.Contains([DST start], "February")
@@ -208,6 +217,7 @@ then 11
 else if Text.Contains([DST start], "December")
 then 12
 else null
+```
 
 ![Power Query Custom Column: DST start month anchor](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/22.png?raw=true)
 
@@ -237,4 +247,4 @@ I tried fuzzy matching, but as at time of writing, it cannot connect a high enou
 
 ![Power Query Merge using fuzzy matching](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/28.png?raw=true)
 
-An alternative solution would be to create a list based on the second dataset’s county column, but this would neglect the _region, city_ joins from the first dataset. Another would be to find a third dataset to extend the other datasets and formulate a common column for the merge. In my scenario, the cost vs benefit would be more time efficient to do the mapping manually, and this dataset is small, and intended for a niche non-scaled need. I provided a copy of the end product [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Time_zone_offsets_and_DST_observations.xlsx) to download as an Excel file. As a reminder, this is strictly an exercise file, and its data is not comprehensive nor accurate.
+An alternative solution would be to create a list based on the second dataset’s county column, but this would neglect the _region, city_ joins from the first dataset. Another would be to find a third dataset to extend the other datasets and formulate a common column for the merge. In my scenario, the cost vs benefit would be more time efficient to do the mapping manually, and this dataset is small, and intended for a niche non-scaled need. I provided a copy of the end product [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Time_zone_offsets_and_DST_observations.xlsx?raw=true) to download as an Excel file. As a reminder, this is strictly an exercise file, and its data is not comprehensive nor accurate.
