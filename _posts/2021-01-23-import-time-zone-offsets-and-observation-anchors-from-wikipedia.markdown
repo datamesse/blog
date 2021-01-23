@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Import time zone offsets and observation anchors from Wikipedia
-date: 2021-01-23 16:32:00 +1100
+date: 2021-01-23 16:45:00 +1100
 description: Using Power Query in Power BI to extract timezone and daylight saving observation periods from Wikipedia. # Add post description (optional)
 img: # /assets/images/?????.jpg no longer works
 tags: [Power BI, Power Query, M, Date.DayOfWeek] # add tag
@@ -248,3 +248,5 @@ I tried fuzzy matching, but as at time of writing, it cannot connect a high enou
 ![Power Query Merge using fuzzy matching](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/28.png?raw=true)
 
 An alternative solution would be to create a list based on the second dataset’s county column, but this would neglect the _region, city_ joins from the first dataset. Another would be to find a third dataset to extend the other datasets and formulate a common column for the merge. In my scenario, the cost vs benefit would be more time efficient to do the mapping manually, and this dataset is small, and intended for a niche non-scaled need. I provided a copy of the end product [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Time_zone_offsets_and_DST_observations.xlsx?raw=true) to download as an Excel file. As a reminder, this is strictly an exercise file, and its data is not comprehensive nor accurate.
+
+![Manually cleaned output](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-23-import-time-zone-offsets-and-observation-anchors-from-wikipedia/29.png?raw=true)
