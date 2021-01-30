@@ -18,7 +18,7 @@ Date.AddDays(Date.EndOfMonth([OurDateField]),(-1 * Number.From(Date.DayOfWeek(Da
 ```
 ![Power Query Day number of last of the month year Day.Sunday](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-30-power-bi-find-last-specific-day-of-a-month/04.png?raw=true)
 
-How it works
+**How it works**
 
 Following similar logic to the previous post, we will try to retrieve the last Sunday of a specific month/year, passing in our relative *OurDateField*.
 
