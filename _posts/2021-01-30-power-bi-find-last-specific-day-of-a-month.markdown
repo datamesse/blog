@@ -62,3 +62,5 @@ For example, the last Friday of the month year.
 Date.AddDays(Date.EndOfMonth([OurDateField]),(-1 * (Number.From(Date.DayOfWeek(Date.EndOfMonth([OurDateField]), Day.Sunday)) + 2)))
 ```
 ![Power Query last date Friday](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-30-power-bi-find-last-specific-day-of-a-month/07.png?raw=true)
+
+![Power Query last date Friday](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-30-power-bi-find-last-specific-day-of-a-month/08.png?raw=true)
