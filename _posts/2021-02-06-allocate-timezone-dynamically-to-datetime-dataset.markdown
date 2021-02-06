@@ -26,7 +26,7 @@ There are simple ways around this:
 
 2 - Zendesk Explore appears to not correctly account for Daylight Savings. This is seen when comparing tickets with the DST offsets against Explore exports.
 
-In this use case, we are reconciling those extract time zone discrepancies, and can amend date/times where daylight savings were not applied to the original data.
+In this use case, we are creating custom functions that provide the opportunity to reconcile those extract time zone discrepancies, i.e. being able to amend date/times where daylight savings were not applied to the original data.
 
 This post incorporates previous posts to [import time zone and daylight saving observations from Wikipedia](https://datamesse.github.io/blog/2021/01/23/import-time-zone-offsets-and-observation-anchors-from-wikipedia.html), which uses "anchors" to indicate when these are applied (e.g. first Sunday of October), and [how to convert anchors to a usable date](https://datamesse.github.io/blog/2021/01/16/power-bi-find-1st-2nd-3rd-specific-day-of-a-month.html).
 
