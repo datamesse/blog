@@ -82,9 +82,9 @@ Whilst expanding the merged table, we can prefix the column names, which may be 
 
 Our next step is to create a custom column to convert our Date/Time value to match the time zone of the parameter selection.
 This isn't as simple as appending an offset to our Date/Time value, because of these considerations:
-a) The need to account for different Date/Time offsets based on standard vs daylight savings.
-b) The anchor dataset (which determines whether or not daylight savings is applied) has a mix of data structures e.g. anchor date/times can be either UTC or local time-based, and can either have a specific date of the month, or relative day position of the month.
-c) The datasets' standard and daylight saving offset values are in a text based structure e.g. "+10:00", rather than straight numbers, which are more easily consumed by Power Query functions (e.g. *DateTime.AddZone()*).
+a. The need to account for different Date/Time offsets based on standard vs daylight savings.
+b. The anchor dataset (which determines whether or not daylight savings is applied) has a mix of data structures e.g. anchor date/times can be either UTC or local time-based, and can either have a specific date of the month, or relative day position of the month.
+c. The datasets' standard and daylight saving offset values are in a text based structure e.g. "+10:00", rather than straight numbers, which are more easily consumed by Power Query functions (e.g. *DateTime.AddZone()*).
 
 To do this, we will create 3 custom functions.
 1. A simple suffix of the standard or daylight daylight offset to the Date/Time value to make it a DateTimeZone value, which we'll name **DatetimeToDatetimezone**.
