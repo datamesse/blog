@@ -18,13 +18,13 @@ An example where I work with this, is runnning manual data exports from Explore,
 
 This poses two problems:
 
-1. If multiple people from different time zones are creating or maintaining dashboards not made in the native Explore tool (e.g. via Power BI), their extract date times will be inconsistent.
+1 - If multiple people from different time zones are creating or maintaining dashboards not made in the native Explore tool (e.g. via Power BI), their extract date times will be inconsistent.
 
 There are simple ways around this:
 * Creating a shared Zendesk account fixed to a specific time zone for data extracts.
 * Having access to an API, but [this is not available as at time of writing](https://support.zendesk.com/hc/en-us/community/posts/360038004534-Explore-API).
 
-2. Zendesk Explore appears to not correctly account for Daylight Savings. This is seen when comparing tickets with the DST offsets against Explore exports.
+2 - Zendesk Explore appears to not correctly account for Daylight Savings. This is seen when comparing tickets with the DST offsets against Explore exports.
 
 In this use case, we are reconciling those extract time zone discrepancies, and can amend date/times where daylight savings were not applied to the original data.
 
