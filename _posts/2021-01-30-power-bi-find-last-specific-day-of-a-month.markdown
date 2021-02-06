@@ -54,7 +54,7 @@ Date.AddDays(Date.EndOfMonth([OurDateField]),(-1 * Number.From(Date.DayOfWeek(Da
 ```
 ![Power Query last date Sunday](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-01-30-power-bi-find-last-specific-day-of-a-month/06.png?raw=true)
 
-Lastly, if you need to pick any other last specific day of the month, just inccrement by one for each day you want to go earlier in the week e.g. Saturday is +1, Friday is +2 etc.
+Lastly, if you need to pick any other last specific day of the month, just increment by one for each day you want to go earlier in the week e.g. Saturday is +1, Friday is +2 etc.
 
 For example, the last Friday of the month year.
 
