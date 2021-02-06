@@ -149,7 +149,7 @@ in
 
 The third custom function **DatetimeAppendZone** uses the **AnchorToDatetimezone** custom function to create date/time anchors for the start and end of daylight savings, then compares them with the Date/Time value to determine if standard or daylight savings offsets should be suffixed to the Date/Time value, using the **DatetimeToDatetimezone** custom function.
 
-Earlier in this post, I mentioned that Zendesk Explore's exports (and potentially other data sources) may be incorrectly failing to account for daylight savings differences. In this third custom funtion, you can use the "Difference" parameter to add/subtract the missed hour(s) to compensate for those. The code below does not do that, but the option is there.
+Earlier in this post, I mentioned that Zendesk Explore's exports (and potentially other data sources) may be incorrectly failing to account for daylight savings differences. In this third custom function, you can use the "Difference" parameter to add/subtract the missed hour(s) to compensate for those. The code below does not do that, but the option is there.
 
 ```
 let
