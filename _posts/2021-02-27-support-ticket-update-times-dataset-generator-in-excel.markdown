@@ -139,6 +139,7 @@ The list below indicates the nature of the data that each worksheet covers:
 * *Updates 5* - The third email by the End-user. 3500 out of 4000 Ticket IDs from *Updates 4* are responded to (70% overall tickets).
 
 * *Updates 6* - Internal comment (i.e. non-public-facing message) by Assignee with random change to Update ticket status column (Open 60%, Pending 20%, and Hold 20%. Randomly applied to 1000 out of 5000 Ticket IDs, with possibility for repeated ID reference.
+
 * *Updates 7* - Public comment by a randomised End-user to Update ticket status column. Randomly applied to 1500 out of 5000 Ticket IDs, with possibility for repeated ID reference.
 
 If you have any questions, please feel free to DM or tweet out to me on Twitter.
