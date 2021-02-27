@@ -11,7 +11,7 @@ How I used Excel to create a randomised support ticket response date/time datase
 
 This dataset generator is free-to-use and targeted for anyone wanting to create data dashboards based on response times between support agents and end users. Please note this is a makeshift template using vlookups and randomisation, so what it creates is minimal and still requires some manual intervention. 
 
-If you end up using it, I would really appreciate a shout out tweet via [@data_messe](https://twitter.com/data_messe/), especially if it's for something you've posted online, so I know it's helped someone.
+If you end up using it, I would really appreciate a shout out tweet via [@data_messe](https://twitter.com/data_messe/), especially if it's for something you've posted online, so I know it has helped someone.
 
 ![Random support ticket update dataset generator](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/01.png?raw=true)
 
@@ -21,7 +21,7 @@ Current generator support:
 * Specify date range covered by the entire dataset.
 * Ticket open/creation time is randomly selected between client's approximate local standard 9am and 5pm.
 * No absolute restriction on when tickets responded to by staff.
-* Suppot ticket assignment date/time (on a separate worksheet).
+* Support ticket assignment date/time (on a separate worksheet).
 
 Current generator limitations:
 * No integration between person/business randomiser, i.e. data needs to be copied from one Excel file to the other.
@@ -35,22 +35,22 @@ The above limitations should be fine, as I have seen plenty of cases where end u
 This post provides an overview on how I created this dataset generator over the last 2 weeks, and how to use it.
 
 There are several steps to use this dataset generator:
-1. Specify date range for the datsaet (download [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_generator.xlsx?raw=true)).
-2. Create staff members and client end users using the random person and business generator, download [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Random_name_and_business_generator.xlsx?raw=true).
+1. Specify date range for the dataset (download [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_generator.xlsx?raw=true)).
+2. Create staff members and client end users using the random person and business generator (download [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Random_name_and_business_generator.xlsx?raw=true)).
 3. Populate the support ticket updates dataset generator with those staff and clients.
 4. Add or remove rows to change number of tickets, and add or remove sheets to increase ticket communication trails.
 
 
 **Define dataset start and end date**
 
-Download the first Excel file to create the dataset from [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_generator.xlsx?raw=true), then populate the *Main* worksheet with the dersired start and end dates.
+Download the first Excel file to create the dataset from [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_generator.xlsx?raw=true), then populate the *Main* worksheet with the desired start and end dates.
 
 ![Random name generator worksheet](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/02.png?raw=true)
 
 
 **Create staff and end users**
 
-A secondary Excel file randomly creates people's names, company, and work emails, using a prepopulated list of given names, surnames, and common words used in business names.
+A secondary Excel file that randomly creates people's names, company, and work emails, using a pre-populated list of given names, surnames, and common words used in business names.
 
 You can download a copy of the random person generator Excel file [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Random_name_and_business_generator.xlsx?raw=true).
 
@@ -65,14 +65,14 @@ If you only want to produce random business names, you can use the *Random busin
 To edit what names or words are used to randomly create the data, refer to the following worksheets:
 - *GivenName*
 - *Surname*
-![GivenName and Surname worksheets](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/04.png?raw=true)
+![GivenName and Surname worksheets](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/05.png?raw=true)
 - *Business Part 1* - For the first word in the company name
 - *Business Part 2* - For the second word in the company name
 ![Business Part 1 and Business Part 2 worksheets](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/06.png?raw=true)
 
-The list of given names and surnames is populated and merged from a variety of sources, but predominantly [https://www.behindthename.com/](https://www.behindthename.com/).
+The list of given names and surnames is populated and merged from a variety of sources, but predominantly from [https://www.behindthename.com/](https://www.behindthename.com/).
 
-As you'll find, the vast majority of randomisation used depends on Excel's RANDBETWEEN function, which by default and set by the workbook, automatically refreshes upon Excel interface changes. So it's important to copy out the data as values to a separate file, if looking to persist it.
+As you'll find, the vast majority of randomisation depends on Excel's RANDBETWEEN function, which by default and set by the workbook, automatically refreshes upon Excel interface changes. So it's important to copy out the data as values to a separate file, if looking to persist it.
 
 The 3 main limitations of this random person generator are:
 1. The strong chance of the same given name or surname being repeated, i.e. risk of reduced diversity. So it is recommended that after you remove records that might be in excess.
@@ -83,7 +83,7 @@ For example, having too many Adams in your dataset:
 
 ![Random name generator's Location worksheet](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/08.png?raw=true)
 
-For the support ticket update generator, the location fields are in the *Userzone* worksheet. The Timezone column can be left blank, as it is being used to correlate to the timezone anchor dataset from a previous ![post](https://datamesse.github.io/blog/2021/01/23/import-time-zone-offsets-and-observation-anchors-from-wikipedia.html). The Office start and end columns are the approximate 9am and 5pm office hour times for that city relative to AEST, and are mandatory for the timestamp randomiser to work. The Office mark column uses arbitrary numbering to group cities in terms of their office hours falling into the same time zone.
+For the support ticket update generator, the location fields are in the *Userzone* worksheet. The Timezone column can be left blank, as it is being used to correlate to the timezone anchor dataset from a previous [post](https://datamesse.github.io/blog/2021/01/23/import-time-zone-offsets-and-observation-anchors-from-wikipedia.html). The Office start and end columns are the approximate 9am and 5pm office hour times for that city relative to Sydney AEST, and are mandatory for the timestamp randomiser to work. The Office mark column uses arbitrary numbering to group cities in terms of their office hours falling into the same time zone.
 
 ![Random support ticket update generator's Userzone worksheet](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/09.png?raw=true)
 
@@ -111,17 +111,17 @@ Be carefult to make sure you are not editing the workbook in any way between cop
 ![Copy out data from Assignment worksheet](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/13.png?raw=true)
 
 
+
 **How it works**
 
 The *Combined* worksheet combines the output of 7 other worksheets, *Updates 1*, *Updates 2*, *Updates 3*, etc.
 
-Each of the *Updates* worksheets has a fixed number of records, so if you need to adjust the number of records in any one of the sheets, then you will neeed to adjust the *Combined* sheet.
+Each of the *Updates* worksheets has a fixed number of records, so if you need to adjust the number of records in any one of the sheets, then you will need to adjust the *Combined* sheet.
 
-To show the reason for this, as an example, *Updates 1* is used records for the opening of new tickets, and has 5000 rows.
+To show the reason for this, as an example, *Updates 1* records the opening of new tickets, and has 5000 rows.
 ![Updates 1 worksheet at last record](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/14.png?raw=true)
 
-The *Combined* worksheet references the Ticket ID from *Updates 1* with the subsequent columns being vlookups.
-Then a manual process of clicking and dragging down the rows in *Combined* to account for 5000 rows (ignoring the headers) is used.
+The *Combined* worksheet references the Ticket ID from *Updates 1*. Then a manual process of clicking and dragging down the rows in *Combined* to account for those 5000 rows (ignoring the headers).
 ![Combined worksheet at 5000th record](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/15.png?raw=true)
 
 But moving to the 5001st row, the Ticket ID from from *Updates 2* is used. This manual process is rinse-and-repeated for each subsequent *Updates* worksheet relative to the number of records they have. This also means the formulas in the *Combined* worksheet will always be inconsistent.
@@ -129,12 +129,18 @@ But moving to the 5001st row, the Ticket ID from from *Updates 2* is used. This 
 
 The list below indicates the nature of the data that each worksheet covers:
 * *Updates 1* - The first email that an End-user sends to the support portal to create the support ticket. Each row represents a unique support ticket ID.
+
 * *Updates 2* - The first response by a randomised staff Agent, with 90% chance the Agent is also the Assignee. Every Ticket ID from *Updates 1* are responded to.
+
 * *Updates 3* - The second email by the End-user. 4500 out of 5000 (90%) Ticket IDs from *Updates 2* are responded to.
+
 * *Updates 4* - The second email by the Agent (original Assignee only). 4000 out of 4500 Ticket IDs from *Updates 3* are responded to (80% overall tickets).
+
 * *Updates 5* - The third email by the End-user. 3500 out of 4000 Ticket IDs from *Updates 4* are responded to (70% overall tickets).
-* *Updates 6* - Internal comment (i.e. non-public-facing message) by Assignee with random change to Update ticket status column (Open 60%, Pending 20%, and Hold 20%). Randomly applied to 1000 out of 5000 Ticket IDs, with possibility for repeated ID reference.
+
+* *Updates 6* - Internal comment (i.e. non-public-facing message) by Assignee with random change to Update ticket status column (Open 60%, Pending 20%, and Hold 20%. Randomly applied to 1000 out of 5000 Ticket IDs, with possibility for repeated ID reference.
 * *Updates 7* - Public comment by a randomised End-user to Update ticket status column. Randomly applied to 1500 out of 5000 Ticket IDs, with possibility for repeated ID reference.
 
+If you have any questions, please feel free to DM or tweet out to me on Twitter.
 
 Happy dashboarding!
