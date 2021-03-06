@@ -23,11 +23,11 @@ Current generator support:
 * No absolute restriction on when tickets responded to by staff.
 * Support ticket assignment date/time (on a separate worksheet).
 * Ticket priority supported as of 06/03/2021.
+* Solved updates included as of 06/03/2021.
 
 Current generator limitations:
 * No integration between person/business randomiser, i.e. data needs to be copied from one Excel file to the other.
 * No restriction date in terms of forcing it to be a weekday when tickets raised or responded to.
-* No ticket solved/closed updates included. -- Supported as of 06/03/2021
 * Limited number of cities and countries in output, but can be expanded on manually.
 * Fixed number of records: 29,500 across 5000 tickets, but can be expanded on manually.
 
@@ -143,7 +143,7 @@ The list below indicates the nature of the data that each worksheet covers:
 
 * *Updates 7* - Public comment by a randomised End-user to Update ticket status column. Randomly applied to 1500 out of 5000 Ticket IDs, with possibility for repeated ID reference.
 
-* *Updates 8* - Final update by the Agent to close support ticket. Randomised as being either an internal comment or public email back to End User. -- Newly added as of 06/03/2021
+* *Updates 8* - Final update by the Agent to close support ticket. Randomised as being either an internal comment, public email back to End User or no response at all, newly added as of 06/03/2021.
 
 If you have any questions, please feel free to DM or tweet out to me on Twitter.
 
