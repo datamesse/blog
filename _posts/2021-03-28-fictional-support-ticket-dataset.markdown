@@ -23,7 +23,7 @@ The first worksheet "Combined" has the conversational updates for each ticket.
 ![Support ticket updates](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-03-28-fictional-support-ticket-dataset/01.png?raw=true)
 
 The second worksheet "Assigned" has the ticket open vs ticket assigned date/time data.
-*Note:* In Zendesk Explore, ticket assignment is stored as a separate column and in such a way that it doesn't quite combine well with the conversational updates data as a single structure. To mirror that, this separate workheet was created.
+**Note:** In Zendesk Explore, ticket assignment is stored as a separate column and in such a way that it doesn't quite combine well with the conversational updates data as a single structure. To mirror that, this separate workheet was created.
 ![Support ticket assignments](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-03-28-fictional-support-ticket-dataset/02.png?raw=true)
 
 The third worksheet "Agents" has photo IDs that correlate to the images in this [Github folder](https://github.com/datamesse/blog/blob/master/assets/attachments/agents/).
