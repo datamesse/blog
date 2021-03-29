@@ -2,12 +2,12 @@
 layout: post
 title: Customer support ticket update dataset
 date: 2021-03-28 16:15:00 +1100
-description: Randmoised/fictional customer service support portal dataset in Excel.
+description: Randomised/fictional customer service support portal dataset in Excel.
 img: # /assets/images/?????.jpg no longer works
 tags: [dataset, support, ticket, update, Zendesk, Zendesk Explore, agents, photos] # add tag
 ---
 
-Sample support ticket conversation and assignment updates/times, and agent photos dataset.
+Sample support ticket update, assignment, and agent photos dataset.
 
 You can download or connect to the dataset in Excel format [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_v2.xlsx?raw=true).
 
