@@ -13,7 +13,7 @@ You can download or connect to the dataset in Excel format [here](https://github
 
 The Github folder with the agent photos can be found [here](https://github.com/datamesse/blog/blob/master/assets/attachments/agents/).
 
-**Update 04/04/2021:** 2nd version of the support ticket update generator can be dowwnloaded [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_generator_v2?raw=true).
+**Update 04/04/2021:** 2nd version of the generator can be dowwnloaded [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_generator_v2?raw=true).
 
 The dataset contains:
  - 5000 support tickets 
