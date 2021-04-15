@@ -9,11 +9,11 @@ tags: [dataset, support, ticket, update, Zendesk, Zendesk Explore, agents, photo
 
 Sample support ticket update, assignment, and agent photos dataset.
 
-You can download or connect to the dataset in Excel format [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_v2.xlsx?raw=true).
+You can download or connect to the dataset in Excel format [here](https://github.com/datamesse/excel-support-ticket-update-generator/blob/main/Support_ticket_updates_v2.xlsx?raw=true).
 
-The Github folder with the agent photos can be found [here](https://github.com/datamesse/blog/blob/master/assets/attachments/agents/).
+The Github folder with the agent photos can be found [here](https://github.com/datamesse/excel-support-ticket-update-generator/tree/main/agents).
 
-**Update 04/04/2021:** 2nd version of the generator can be downloaded [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_generator_v2.xlsx?raw=true).
+**Update 04/04/2021:** 2nd version of the generator can be downloaded [here](https://github.com/datamesse/excel-support-ticket-update-generator/blob/main/Support_ticket_updates_generator_v2.xlsx?raw=true).
 
 The dataset contains:
  - 5000 support tickets 
@@ -46,6 +46,6 @@ I noticed my random generator did not provide realistic fluctuations in the conv
 
 This dataset is free to use and alter as you need, and no attribution is required, though would be appreciated.
 
-All names in this dataset are fictional and not based on real-life people. The random name generator that was used to create them can be found [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates_generator_v2?raw=true).
+All names in this dataset are fictional and not based on real-life people. The random name generator that was used to create them can be found [here](https://github.com/datamesse/excel-support-ticket-update-generator/blob/main/Random_name_and_business_generator.xlsx?raw=true).
 
 Photographs were taken from [Pixabay.com](https://pixabay.com/service/license/) and [Pexels.com](https://pixabay.com/service/license/) for non-commercial use, edited to fit the appearance of an organisational profile photo, and direct URL attribution included in the dataset for each photo.
