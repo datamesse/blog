@@ -28,7 +28,7 @@ The second worksheet "Assignment" has the ticket open vs ticket assigned date/ti
 **Note:** In Zendesk Explore, ticket assignment is stored as a separate column and in such a way that it doesn't quite combine well with the conversational updates data as a single structure. To mirror that, this separate workheet was created.
 ![Support ticket assignments](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-03-28-fictional-support-ticket-dataset/02.png?raw=true)
 
-The third worksheet "Agents" has photo IDs that correlate to the images in this [Github folder](https://github.com/datamesse/blog/blob/master/assets/attachments/agents/).
+The third worksheet "Agents" has photo IDs that correlate to the images in this [Github folder](https://github.com/datamesse/excel-support-ticket-update-generator/tree/main/agents).
 
 ![Support ticket agents](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-03-28-fictional-support-ticket-dataset/03.png?raw=true)
 
