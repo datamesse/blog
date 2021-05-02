@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Support ticket update/times generator in Excel
+title: Customer support ticket update generator
 date: 2021-02-27 19:50:00 +1100
 description: Using Excel to create data
 img: # /assets/images/?????.jpg no longer works
