@@ -2,12 +2,12 @@
 layout: post
 title: Customer support ticket update generator
 date: 2021-02-27 19:50:00 +1100
-description: Using Excel to create data
+description: Using Excel to create a dataset generator
 img: # /assets/images/?????.jpg no longer works
 tags: [Excel, formula, support ticket, Zendesk Explore, dataset, dataset generator, RANDBETWEEN, random] # add tag
 ---
 
-How I used Excel to create a randomised support ticket response date/time dataset generator.
+Randomised support ticket update date/time dataset generator made using Excel.
 
 This dataset generator is free-to-use and targeted for anyone wanting to create data dashboards based on response times between support agents and end users. Please note this is a makeshift template using vlookups and randomisation, so what it creates is minimal and still requires some manual intervention. 
 
