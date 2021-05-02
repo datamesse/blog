@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Find date for the last specific day of a month
+title: Power BI find date for the last specific day of a month
 date: 2021-01-30 12:42:00 +1100
 description: Using Power Query in Power BI to find the last specific day e.g. last Sunday of a month/year, based on another date column. # Add post description (optional)
 img: # /assets/images/?????.jpg no longer works
