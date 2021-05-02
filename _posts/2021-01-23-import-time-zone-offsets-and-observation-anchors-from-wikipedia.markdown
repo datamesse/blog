@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Import time zone offsets and observation anchors from Wikipedia
+title: Power BI import time zone offsets and observation anchors from Wikipedia
 date: 2021-01-23 16:56:00 +1100
 description: Using Power Query in Power BI to extract timezone and daylight saving observation periods from Wikipedia. # Add post description (optional)
 img: # /assets/images/?????.jpg no longer works
