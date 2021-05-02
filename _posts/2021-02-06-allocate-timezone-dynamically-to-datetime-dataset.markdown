@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Apply time zone to date/times using parameters and anchor values
+title: Power BI dynamically apply timezone and daylight savings on date times
 date: 2021-02-06 18:15:00 +1100
 description: Using Power BI parameter to assign time zone to a date/time dataset and apply daylight saving offsets. # Add post description (optional)
 img: # /assets/images/?????.jpg no longer works
