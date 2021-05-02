@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Find date for the 1st, 2nd, 3rd, or 4th specific day of a month
+title: Power BI find date for thee nth specific day of a month
 date: 2021-01-16 19:20:00 +1100
 description: Using Power Query in Power BI to find the first, second, third or fourth specific day e.g. Sunday of a month/year, based on another date column. # Add post description (optional)
 img: # /assets/images/?????.jpg no longer works
