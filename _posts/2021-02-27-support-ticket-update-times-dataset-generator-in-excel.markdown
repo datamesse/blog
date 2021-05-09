@@ -11,6 +11,8 @@ Randomised support ticket update date/time dataset generator made using Excel.
 
 This dataset generator is free-to-use and targeted for anyone wanting to create data dashboards based on response times between support agents and end users. Please note this is a makeshift template using vlookups and randomisation, so what it creates is minimal and still requires some manual intervention.
 
+You can find my GitHub repository for the generator [here](https://github.com/datamesse/excel-support-ticket-update-generator).
+
 ![Random support ticket update dataset generator](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/01.png?raw=true)
 
 You can download a sample dataset created by this generator [here](https://github.com/datamesse/blog/blob/master/assets/attachments/Support_ticket_updates.xlsx?raw=true).
