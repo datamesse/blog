@@ -43,7 +43,7 @@ Note there is no time zone in the data itself, so assumptions made by any applic
 
 ![Sample date time dataset imported into Power Query](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-06-allocate-timezone-dynamically-to-datetime-dataset/03.png?raw=true)
 
-After importing the sample date/time dataset, we next import the combined time zone offset and daylight savings observation [dataset](https://github.com/datamesse/blog/blob/master/assets/attachments/Time_zone_offsets_and_DST_observations.xlsx?raw=true) created in this [post](https://datamesse.github.io/blog/2021/01/23/import-time-zone-offsets-and-observation-anchors-from-wikipedia.html).
+After importing the sample date/time dataset, we next import the combined time zone offset and daylight savings observation [dataset](https://github.com/datamesse/excel-support-ticket-update-generator/blob/main/Time_zone_offsets_and_DST_observations.xlsx?raw=true) created in this [post](https://datamesse.github.io/blog/2021/01/23/import-time-zone-offsets-and-observation-anchors-from-wikipedia.html).
 
 At this point, if you only need certain time zones to select from, you can filter for them here before proceeding.
 
