@@ -9,9 +9,7 @@ tags: [Excel, formula, support ticket, Zendesk Explore, dataset, dataset generat
 
 Randomised support ticket update date/time dataset generator made using Excel.
 
-This dataset generator is free-to-use and targeted for anyone wanting to create data dashboards based on response times between support agents and end users. Please note this is a makeshift template using vlookups and randomisation, so what it creates is minimal and still requires some manual intervention. 
-
-If you end up using it, I would really appreciate a shout out tweet via [@data_messe](https://twitter.com/data_messe/), especially if it's for something you've posted online, so I know it has helped someone.
+This dataset generator is free-to-use and targeted for anyone wanting to create data dashboards based on response times between support agents and end users. Please note this is a makeshift template using vlookups and randomisation, so what it creates is minimal and still requires some manual intervention.
 
 ![Random support ticket update dataset generator](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-02-27-support-ticket-update-times-dataset-generator-in-excel/01.png?raw=true)
 
@@ -24,10 +22,13 @@ Current generator support:
 * Support ticket assignment date/time (on a separate worksheet).
 * Ticket priority supported as of 06/03/2021.
 * Solved updates included as of 06/03/2021.
+* Define probability of ticket criticality by country as of 19/04/2021.
+* Define probability of development escalation by country as of 19/04/2021.
+* Minimise likelihood update record is on a weekend, Christmas, and New Year's days as of 03/05/2021.
 
 Current generator limitations:
 * No integration between person/business randomiser, i.e. data needs to be copied from one Excel file to the other.
-* No restriction date in terms of forcing it to be a weekday when tickets raised or responded to.
+* Limited restriction date in terms of forcing it to be a weekday when tickets raised or responded to.
 * Limited number of cities and countries in output, but can be expanded on manually.
 * Fixed number of records: 29,500 across 5000 tickets, but can be expanded on manually.
 
