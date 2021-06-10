@@ -22,7 +22,7 @@ Table.NestedJoin(#"Previous step in your Power Query code",
                  JoinKind.Inner)
 ```
 
-T-SQL uses the concept of window functions to perform aggregations across groupings of rows, which are grouped based on a specific column. More info on this can be found on (Pinal Dave's blog)[https://blog.sqlauthority.com/2015/05/28/sql-server-what-are-t-sql-window-functions-notes-from-the-field-082/].
+T-SQL uses the concept of window functions to perform aggregations across groupings of rows, which are grouped based on a specific column. More info on this can be found on [Pinal Dave's blog](https://blog.sqlauthority.com/2015/05/28/sql-server-what-are-t-sql-window-functions-notes-from-the-field-082/).
 
 As a basic example, say your dataset has rows representing quarterly sales and you need to calculate the proportion of sales that quarter represents for the whole year i.e. Quarterly Sales ÷ Annual Sales.
 
