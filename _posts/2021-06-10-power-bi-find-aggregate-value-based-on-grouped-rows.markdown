@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Power BI find aggregate value based on grouped rows
-date: 2021-06-10 19:20:00 +1100
+date: 2021-06-10 21:550:00 +1100
 description: Using Power Query in Power BI to calculate an aggregate value based on row groups. # Add post description (optional)
 img: # /assets/images/?????.jpg no longer works
 tags: [Power BI, Power Query, window function, aggregate, group by, column] # add tag
@@ -88,7 +88,7 @@ Then you simply need to expand out the aggregate column from the merge.
 
 ![Power Query expand merged Group By table to display the aggregate column 1](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-06-10-power-bi-find-aggregate-value-based-on-grouped-rows/05.png?raw=true)
 
-![Power Query expand merged Group By table to display the aggregate column 2](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-06-10-power-bi-find-aggregate-value-based-on-grouped-rows/05.png?raw=true)
+![Power Query expand merged Group By table to display the aggregate column 2](https://github.com/datamesse/blog/blob/master/assets/images/blog/2021-06-10-power-bi-find-aggregate-value-based-on-grouped-rows/06.png?raw=true)
 
 Now that the preliminary window function is complete, we can address the example objective of creating a custom column to indicate which data row per Ticket ID represents the first support agent response to an end-user, which is a simple if condition to compare the "Update - Timestamp" and "1st response" columns.
 
