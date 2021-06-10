@@ -44,7 +44,7 @@ This is the equivalent of the previous example's proportion of annual sales that
 
 The approach taken here is to create a new column whose definition is the combination of two common queries:
 1. The Table.NestedJoin function that's commonly seen in *Merge Queries* to combine your existing dataset to the conceptual grouped dataset.
-2. The Table.Group function creates a conceptual grouped by table of the existing dataset with the desired aggregate result, and that conceptual table being passed as into the Table.NestedJoin
+2. The Table.Group function creates a conceptual grouped by table of the existing dataset with the desired aggregate result, and that conceptual table being passed as the right-joined table parameter into the Table.NestedJoin.
 3. Then expand the merged table to display the aggregate result for each row of the original dataset.
 
 **Code structure**
